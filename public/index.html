@@ -13,7 +13,13 @@
       <p class="tagline">Paste a URL. Get an instant audit — status, speed, SEO basics, and accessibility gaps.</p>
     </header>
 
-    <form id="audit-form">
+    <noscript>
+      <div class="status error" style="display:flex">
+        This tool requires JavaScript to run the audit. Please enable JavaScript and reload.
+      </div>
+    </noscript>
+
+    <form id="audit-form" action="javascript:void(0)" onsubmit="return false">
       <input
         id="url-input"
         type="text"

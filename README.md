@@ -3,8 +3,6 @@
 A small tool that audits any URL: HTTP status, response time, page title, meta
 description, H1 count, images missing `alt` text, and approximate word count.
 
-Built for the Digital Heroes SDE internship qualification task.
-
 **Live demo:** https://page-pulse-dmmp.onrender.com
 **Repo:** `github.com/dhruvrajsinghgaur/page-pulse`
 

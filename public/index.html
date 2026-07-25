@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Pulse — Instant URL Audit</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Page&nbsp;Pulse</h1>
+      <p class="tagline">Paste a URL. Get an instant audit — status, speed, SEO basics, and accessibility gaps.</p>
+    </header>
+
+    <form id="audit-form">
+      <input
+        id="url-input"
+        type="text"
+        placeholder="https://example.com"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="submit-btn">Audit</button>
+    </form>
+
+    <div id="status" class="status" hidden></div>
+    <div id="report" class="report" hidden></div>
+  </div>
+
+  <footer>
+    Built for
+    <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer">Digital Heroes Training Task</a>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

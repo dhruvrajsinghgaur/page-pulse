@@ -5,8 +5,8 @@ description, H1 count, images missing `alt` text, and approximate word count.
 
 Built for the Digital Heroes SDE internship qualification task.
 
-**Live demo:** _add your deployed URL here after following the deploy steps below_
-**Repo:** `github.com/dhruvrajsinghgaur/page-pulse` _(push this folder to a repo with this name, or update the link)_
+**Live demo:** https://page-pulse-dmmp.onrender.com
+**Repo:** `github.com/dhruvrajsinghgaur/page-pulse`
 
 ---
 
@@ -162,6 +162,19 @@ being measured is an error page. The report is built either way, with
 `isSuccess`/`statusCategory`/`warning` fields added so the *caller* decides
 what to do with a non-200 response, rather than the tool silently deciding
 for them.
+
+**5. A belt-and-suspenders `onsubmit="return false"` on the form, in addition to the JS event handler.**
+The single-page app relies on `script.js` intercepting the submit event to
+call the API via `fetch`. If that script is ever slow to load or fails
+silently (a flaky connection, a host's cold start, etc.), a plain HTML
+`<form>` with no explicit `action` falls back to the browser's default
+behavior: a full GET page reload with the form data appended as a query
+string — which looks like a broken, unstyled page and does nothing useful.
+Setting `action="javascript:void(0)"` and an inline `onsubmit="return false"`
+means the form can never do that, regardless of whether the external script
+has attached yet. This is a real bug I hit against the live deployment (a
+momentary cold-start delay on the free host meant the JS hadn't loaded when
+the form was submitted) — the fix generalizes to any host/network hiccup.
 
 ---
 
